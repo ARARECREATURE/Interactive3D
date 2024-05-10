@@ -7,6 +7,8 @@ public class CharacterController : MonoBehaviour
     float translationSpeed = 2.0f;
         float rotationSpeed = 150f;
         private Animator animator;
+    
+        public int logsCollected;
         // Start is called before the first frame update
         void Start()
         {
@@ -39,10 +41,16 @@ public class CharacterController : MonoBehaviour
 
             animator.SetBool("isRun", Input.GetKey(KeyCode.LeftShift));
 
+            
 
 
 
 
         
+        }
+
+        public virtual void collectlog()
+        {
+            logsCollected++;
         }
 }
