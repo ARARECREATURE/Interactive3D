@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.ReorderableList;
 using UnityEngine;
 
 public class CharacterController : MonoBehaviour
@@ -9,6 +10,8 @@ public class CharacterController : MonoBehaviour
         private Animator animator;
     
         public int logsCollected;
+
+        public GameObject Lane;
         // Start is called before the first frame update
         void Start()
         {
@@ -41,16 +44,21 @@ public class CharacterController : MonoBehaviour
 
             animator.SetBool("isRun", Input.GetKey(KeyCode.LeftShift));
 
-            
 
+            Ray ray = new Ray(transform.position, Vector3.down);
+            RaycastHit hit;
 
-
-
-        
+            if (Physics.Raycast(ray, out hit, 0.5f, LayerMask.GetMask("Floor")))
+            {
+                Lane = hit.collider.gameObject;
+            }
         }
 
         public virtual void collectlog()
         {
             logsCollected++;
         }
+        
+        
+        
 }
