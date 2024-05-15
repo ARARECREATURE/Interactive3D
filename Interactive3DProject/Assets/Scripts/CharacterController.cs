@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting.ReorderableList;
 using UnityEngine;
 
@@ -12,6 +13,10 @@ public class CharacterController : MonoBehaviour
         public int logsCollected;
 
         public GameObject Lane;
+        
+        public GameObject EnemyHitbox;
+        
+        [SerializeField] private Animator Dragon;
         // Start is called before the first frame update
         void Start()
         {
@@ -44,7 +49,17 @@ public class CharacterController : MonoBehaviour
 
             animator.SetBool("isRun", Input.GetKey(KeyCode.LeftShift));
 
-
+            if (GetComponent<BoxCollider>())
+            {
+               CheckEnemy();
+                
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    StartCoroutine(PlayerAttack());
+                }
+                
+                
+            }
             Ray ray = new Ray(transform.position, Vector3.down);
             RaycastHit hit;
 
@@ -58,6 +73,36 @@ public class CharacterController : MonoBehaviour
         {
             logsCollected++;
         }
+
+        private IEnumerator PlayerAttack()
+        {
+            if (EnemyHitbox.gameObject.name == "DragonHitBox")
+            {
+                Debug.Log("Hit Dragon");
+                Dragon.SetBool("GetHit", true);
+                yield return new WaitForSeconds(2);
+                Dragon.SetBool("GetHit", false);
+
+            }
+        }
+
+        private void CheckEnemy()
+        {
+            Collider[] colliders = Physics.OverlapBox(GetComponent<BoxCollider>().bounds.center,GetComponent<BoxCollider>().bounds.extents, Quaternion.identity);
+        
+            var enemyColliders = colliders.Where(collider => collider.CompareTag("Enemy")).ToArray();
+
+            foreach (Collider Enemy in colliders)
+            {
+                if (Enemy.gameObject.CompareTag("Enemy"))
+                {
+                    EnemyHitbox = Enemy.gameObject;
+                }
+            }
+            
+        }
+
+       
         
         
         
