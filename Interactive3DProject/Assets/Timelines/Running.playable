@@ -87,7 +87,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: -5754259349529927871}
-    m_Duration: 9.5
+    m_Duration: 18
     m_TimeScale: 1
     m_ParentTrack: {fileID: 1856050314882002671}
     m_EaseInDuration: 0
@@ -197,7 +197,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: 3429134376746485787}
-    m_Duration: 9.5
+    m_Duration: 18
     m_TimeScale: 1
     m_ParentTrack: {fileID: 2468149409362389902}
     m_EaseInDuration: 0
@@ -290,13 +290,13 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: -1128720481937468223}
-    m_Duration: 5
+    m_Duration: 9.566666666666666
     m_TimeScale: 1
     m_ParentTrack: {fileID: 3192281564085824874}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
-    m_BlendOutDuration: -1
+    m_BlendOutDuration: 0.9333333333333336
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
@@ -356,15 +356,15 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: cam1
   - m_Version: 1
-    m_Start: 5
+    m_Start: 8.633333333333333
     m_ClipIn: 0
     m_Asset: {fileID: 5947388314305926105}
-    m_Duration: 4.5
+    m_Duration: 9.366666666666665
     m_TimeScale: 1
     m_ParentTrack: {fileID: 3192281564085824874}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: -1
+    m_BlendInDuration: 0.9333333333333336
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
@@ -463,7 +463,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: 5648590460134467421}
-    m_Duration: 9.5
+    m_Duration: 18
     m_TimeScale: 1
     m_ParentTrack: {fileID: 4165504254507966164}
     m_EaseInDuration: 0
