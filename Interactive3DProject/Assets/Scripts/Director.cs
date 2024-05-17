@@ -12,7 +12,8 @@ public class Director : MonoBehaviour
     void Awake()
     {
         director = GetComponent<PlayableDirector>();
-        runningScene();
+        //runningScene();
+        //runningScene2();
     }
 
     // Update is called once per frame
@@ -24,6 +25,12 @@ public class Director : MonoBehaviour
     public void runningScene()
     {
         director.playableAsset = timeline[0];
+        director.Play();
+    }
+
+    public void runningScene2()
+    {
+        director.playableAsset = timeline[1];
         director.Play();
     }
 }
