@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting.ReorderableList;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class CharacterController : MonoBehaviour
 {
