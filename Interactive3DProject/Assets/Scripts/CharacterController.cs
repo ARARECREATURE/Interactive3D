@@ -10,6 +10,9 @@ public class CharacterController : MonoBehaviour
         private Animator animator;
     
         public int logsCollected;
+        public bool orbCollected;
+
+        
         // Start is called before the first frame update
         void Start()
         {
@@ -53,5 +56,10 @@ public class CharacterController : MonoBehaviour
         public virtual void collectlog()
         {
             logsCollected++;
+        }
+
+        public virtual void collectOrb()
+        {
+            orbCollected = true;
         }
 }

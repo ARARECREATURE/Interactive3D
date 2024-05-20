@@ -6,10 +6,14 @@ public class Chest : MonoBehaviour
 {
     Animator anim;
     
+    [SerializeField]
+    private GameObject orb;
+    
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        orb.SetActive(false);
     }
 
     // Update is called once per frame
@@ -23,6 +27,14 @@ public class Chest : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             anim.SetBool("isOpen", true);
+            //orb.SetActive(true);
+            StartCoroutine(spawnOrb());
         }
+    }
+
+    IEnumerator spawnOrb()
+    {
+        yield return new WaitForSeconds(1.1f);
+        orb.SetActive(true);
     }
 }
