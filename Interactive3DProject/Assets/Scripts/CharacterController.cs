@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
+using System.Security.Cryptography;
 using Unity.VisualScripting.ReorderableList;
 using UnityEngine;
 using UnityEngine.Playables;
+using Quaternion = UnityEngine.Quaternion;
+using Vector3 = UnityEngine.Vector3;
 
 public class CharacterController : MonoBehaviour
 {
@@ -18,10 +22,20 @@ public class CharacterController : MonoBehaviour
         public GameObject EnemyHitbox;
         
         [SerializeField] private Animator Dragon;
+
+        [SerializeField] private int DragonHp = 10;
+
+        private Rigidbody rb;
+
+        private bool AttackcoolDown;
+
+        [SerializeField] GameObject[] ListofBodyParts;
+      
         // Start is called before the first frame update
         void Start()
         {
             animator = GetComponent<Animator>();
+            rb = GetComponent<Rigidbody>();
         }
 
         // Update is called once per frame
@@ -54,7 +68,7 @@ public class CharacterController : MonoBehaviour
             {
                CheckEnemy();
                 
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyDown(KeyCode.Space) && AttackcoolDown == false && EnemyHitbox != null)
                 {
                     StartCoroutine(PlayerAttack());
                 }
@@ -79,11 +93,39 @@ public class CharacterController : MonoBehaviour
         {
             if (EnemyHitbox.gameObject.name == "DragonHitBox")
             {
+                AttackcoolDown = true;
+                DragonHp--;
+                animator.SetBool("PlayerAttack", true);
+                if (DragonHp == 5)
+                {
+                    Dragon.SetBool("KnockBack", true);
+                    
+                }
+                
+                else
+                {
+                    Dragon.SetBool("GetHit", true);
+                }
                 Debug.Log("Hit Dragon");
-                Dragon.SetBool("GetHit", true);
-                yield return new WaitForSeconds(2);
-                Dragon.SetBool("GetHit", false);
+                yield return new WaitForSeconds(0.25f);
+                
+                animator.SetBool("PlayerAttack", false);
+                if (DragonHp == 5)
+                {
+                    Dragon.SetBool("KnockBack", false);
+                }
+                else
+                {
+                    Dragon.SetBool("GetHit", false);
+                }
 
+                if (DragonHp <= 0)
+                {
+                    Destroy(Dragon.GetComponent<GameObject>());
+                }
+
+                yield return new WaitForSeconds(1);
+                AttackcoolDown = false;
             }
         }
 
