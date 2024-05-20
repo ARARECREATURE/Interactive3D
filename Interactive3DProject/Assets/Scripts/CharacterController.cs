@@ -44,13 +44,6 @@ public class CharacterController : MonoBehaviour
             }
 
             animator.SetBool("isRun", Input.GetKey(KeyCode.LeftShift));
-
-            
-
-
-
-
-        
         }
 
         public virtual void collectlog()
