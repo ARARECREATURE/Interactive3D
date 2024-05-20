@@ -30,6 +30,8 @@ public class CharacterController : MonoBehaviour
         private bool AttackcoolDown;
 
         [SerializeField] GameObject[] ListofBodyParts;
+
+        [SerializeField] private GameObject TimelineDragonDefeat;
       
         // Start is called before the first frame update
         void Start()
@@ -95,6 +97,10 @@ public class CharacterController : MonoBehaviour
             {
                 AttackcoolDown = true;
                 DragonHp--;
+                if (DragonHp <= 0)
+                {
+                    DragonDefeat();
+                }
                 animator.SetBool("PlayerAttack", true);
                 if (DragonHp == 5)
                 {
@@ -145,8 +151,16 @@ public class CharacterController : MonoBehaviour
             
         }
 
-       
-        
-        
-        
+        private void DragonDefeat()
+        {
+            if (TimelineDragonDefeat)
+            {
+                TimelineDragonDefeat.GetComponent<PlayableDirector>().Play();
+            }
+        }
+
+
+
+
+
 }
