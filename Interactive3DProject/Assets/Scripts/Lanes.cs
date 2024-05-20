@@ -40,6 +40,9 @@ public class Lanes : MonoBehaviour
         if (PlayerCharacter.Lane == RandomLane)
         {
             Debug.Log("Hit Player");
+            
+            
+            
         }
         else
         {
