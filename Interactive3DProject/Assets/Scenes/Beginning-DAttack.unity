@@ -159,7 +159,7 @@ PlayableDirector:
   - key: {fileID: -7139213240384120123, guid: 9000aa169d08a8443b63fdfc755eb4a5, type: 2}
     value: {fileID: 503550917}
   - key: {fileID: 7834174593962838531, guid: 9000aa169d08a8443b63fdfc755eb4a5, type: 2}
-    value: {fileID: 503550920}
+    value: {fileID: 0}
   - key: {fileID: 6118550826315012565, guid: 9000aa169d08a8443b63fdfc755eb4a5, type: 2}
     value: {fileID: 1908109592}
   - key: {fileID: -8972874730051048269, guid: 9000aa169d08a8443b63fdfc755eb4a5, type: 2}
@@ -175,6 +175,8 @@ PlayableDirector:
   - key: {fileID: 8277268007866227241, guid: 9000aa169d08a8443b63fdfc755eb4a5, type: 2}
     value: {fileID: 178534607}
   - key: {fileID: 6037776193402634547, guid: 9000aa169d08a8443b63fdfc755eb4a5, type: 2}
+    value: {fileID: 20881155}
+  - key: {fileID: 2889320871179221917, guid: 9000aa169d08a8443b63fdfc755eb4a5, type: 2}
     value: {fileID: 20881155}
   m_ExposedReferences:
     m_References:
@@ -1118,11 +1120,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4317874184272834, guid: bccc7a794e75b2a44a4b0dac69160b7b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12.6
+      value: -36
       objectReference: {fileID: 0}
     - target: {fileID: 4317874184272834, guid: bccc7a794e75b2a44a4b0dac69160b7b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 148.6
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 4317874184272834, guid: bccc7a794e75b2a44a4b0dac69160b7b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4563,7 +4565,6 @@ GameObject:
   - component: {fileID: 503550919}
   - component: {fileID: 503550918}
   - component: {fileID: 503550917}
-  - component: {fileID: 503550920}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -4645,40 +4646,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 355.1004, y: 242.3671, z: 345.6776}
---- !u!114 &503550920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 503550916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowDebugText: 0
-  m_ShowCameraFrustum: 1
-  m_IgnoreTimeScale: 0
-  m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
-  m_BlendUpdateMethod: 1
-  m_DefaultBlend:
-    m_Style: 2
-    m_Time: 2
-    m_CustomCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  m_CustomBlends: {fileID: 0}
-  m_CameraCutEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_CameraActivatedEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &581198188
 GameObject:
   m_ObjectHideFlags: 3
@@ -6931,8 +6898,8 @@ MonoBehaviour:
   m_UpdateMethod: 2
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
-    m_Style: 1
-    m_Time: 2
+    m_Style: 2
+    m_Time: 1.5
     m_CustomCurve:
       serializedVersion: 2
       m_Curve: []
