@@ -3,3 +3,8 @@ Interactive3DProject/Assets/TerrainTexturesPackFree/TerrainTextures/GrassUV01.pn
 Interactive3DProject/Assets/TerrainTexturesPackFree/TerrainTextures/GrassUV01_N.png.meta
 Interactive3DProject/Assets/TerrainTexturesPackFree/TerrainTextures/GrassUV02.png.meta
 Interactive3DProject/Assets/TerrainTexturesPackFree/TerrainTextures/GrassUV02_N.png.meta
+*.png
+*.exr
+*.asset
+*.mat
+Interactive3DProject/Assets/Materials/WoodLog/Scene/Demo.unity

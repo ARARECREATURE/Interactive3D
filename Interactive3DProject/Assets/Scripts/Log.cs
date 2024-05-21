@@ -10,7 +10,7 @@ public class Log : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.GetComponent<CharacterController>().collectlog();
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 }
