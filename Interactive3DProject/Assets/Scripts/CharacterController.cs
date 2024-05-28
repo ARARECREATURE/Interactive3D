@@ -32,6 +32,8 @@ public class CharacterController : MonoBehaviour
         [SerializeField] GameObject[] ListofBodyParts;
 
         [SerializeField] private GameObject TimelineDragonDefeat;
+    
+        [SerializeField] private GameObject SwapCamScript;
       
         // Start is called before the first frame update
         void Start()
@@ -155,7 +157,8 @@ public class CharacterController : MonoBehaviour
         {
             if (TimelineDragonDefeat)
             {
-                TimelineDragonDefeat.GetComponent<PlayableDirector>().Play();
+                SwapCamScript.GetComponent<SwapCamera>().enabled = false;
+                TimelineDragonDefeat.SetActive(true);
             }
         }
 

@@ -22,7 +22,15 @@ public class SwapCamera : MonoBehaviour
             CamSwap.enabled = true;
             DisabledCam.enabled = false;
             Lanes.GetComponent<Lanes>().enabled = true;
-            this.enabled = false;
+            
         }
+    }
+
+    private void OnDisable()
+    {
+        if(CamSwap) CamSwap.enabled = false;
+        if(DisabledCam) DisabledCam.enabled = true;
+        if(Lanes) Lanes.GetComponent<Lanes>().enabled = false;
+        
     }
 }

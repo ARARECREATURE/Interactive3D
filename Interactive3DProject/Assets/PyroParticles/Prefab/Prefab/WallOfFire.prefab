@@ -4952,9 +4952,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AudioSource: {fileID: 8215432}
-  StartTime: 3
+  StartTime: 10
   StopTime: 2
-  Duration: 0
+  Duration: 10
   ForceAmount: 0
   ForceRadius: 0
   IsProjectile: 0
