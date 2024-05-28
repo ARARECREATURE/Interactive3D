@@ -5,14 +5,13 @@ using UnityEngine;
 public class Bridge : MonoBehaviour
 {
     public GameObject bridge;
+    public CharacterController player;
 
-    private void OnCollisionEnter(Collision collision)
+    private void Update()
     {
-        if (collision.gameObject.CompareTag("Player") &&
-            collision.gameObject.GetComponent<CharacterController>().logsCollected == 4)
+        if (player.logsCollected == 4)
         {
             bridge.SetActive(true);
         }
-        
     }
 }

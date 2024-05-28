@@ -7,6 +7,7 @@ public class Director : MonoBehaviour
 {
     private PlayableDirector director;
     public PlayableAsset[] timeline;
+    private int currentTimeline = 0;
 
     // Start is called before the first frame update
     void Awake()
@@ -16,8 +17,12 @@ public class Director : MonoBehaviour
         //runningScene2();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
+    {
+        //nextTimeline();
+    }
+
+    private void Update()
     {
         
     }
@@ -32,5 +37,14 @@ public class Director : MonoBehaviour
     {
         director.playableAsset = timeline[1];
         director.Play();
+    }
+
+    public void nextTimeline()
+    {
+        if (currentTimeline < timeline.Length)
+        {
+            director.playableAsset = timeline[currentTimeline];
+            director.Play();
+        }
     }
 }
