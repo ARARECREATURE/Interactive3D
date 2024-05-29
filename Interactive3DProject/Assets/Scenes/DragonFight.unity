@@ -43103,7 +43103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!320 &1523004162
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -43114,7 +43114,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 5a2b9e64df55b5f4d9b6affe13e7bc5a, type: 2}
-  m_InitialState: 0
+  m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -43170,9 +43170,7 @@ MonoBehaviour:
   CamSwap: {fileID: 905270868}
   DisabledCam: {fileID: 1274208697}
   Lanes: {fileID: 0}
-  DisableGameObjects:
-  - {fileID: 1814456897}
-  - {fileID: 4388205}
+  DisableGameObjects: []
   ExtraDirector: {fileID: 1518423471}
 --- !u!4 &1523027989 stripped
 Transform:
