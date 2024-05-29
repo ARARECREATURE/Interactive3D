@@ -36,13 +36,14 @@ public class SwapCamera : MonoBehaviour
                     Disable.SetActive(false);
                 }
             }
-
+                
+            /*
             if (ExtraDirector)
             {
                 ExtraDirector.GetComponent<PlayableDirector>().Play();
                 this.enabled = false;
             }
-            
+            */
 
 
         }
