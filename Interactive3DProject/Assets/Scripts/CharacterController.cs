@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,8 @@ public class CharacterController : MonoBehaviour
         [SerializeField] private GameObject TimelineDragonDefeat;
     
         [SerializeField] private GameObject SwapCamScript;
+
+        [SerializeField] private GameObject WakeUp;
       
         // Start is called before the first frame update
         void Start()
@@ -68,9 +71,8 @@ public class CharacterController : MonoBehaviour
 
             animator.SetBool("isRun", Input.GetKey(KeyCode.LeftShift));
 
-            if (GetComponent<BoxCollider>())
-            {
-               CheckEnemy();
+           CheckEnemy();
+               
                 
                 if (Input.GetKeyDown(KeyCode.Space) && AttackcoolDown == false && EnemyHitbox != null)
                 {
@@ -78,7 +80,7 @@ public class CharacterController : MonoBehaviour
                 }
                 
                 
-            }
+            
             Ray ray = new Ray(transform.position, Vector3.down);
             RaycastHit hit;
 
@@ -95,10 +97,12 @@ public class CharacterController : MonoBehaviour
 
         private IEnumerator PlayerAttack()
         {
+            CheckEnemy();
             if (EnemyHitbox.gameObject.name == "DragonHitBox")
             {
                 AttackcoolDown = true;
                 DragonHp--;
+                this.GetComponent<AudioSource>().Play();
                 if (DragonHp <= 0)
                 {
                     DragonDefeat();
@@ -151,6 +155,7 @@ public class CharacterController : MonoBehaviour
                 }
             }
             
+            
         }
 
         private void DragonDefeat()
@@ -162,8 +167,5 @@ public class CharacterController : MonoBehaviour
             }
         }
 
-
-
-
-
+        
 }

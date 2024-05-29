@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class SwapCamera : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class SwapCamera : MonoBehaviour
 
     private float Counter;
 
+    [SerializeField] private GameObject[] DisableGameObjects;
+
+    [SerializeField] private GameObject ExtraDirector;
     private void Update()
     {
         Counter += Time.deltaTime;
@@ -21,8 +25,26 @@ public class SwapCamera : MonoBehaviour
         {
             CamSwap.enabled = true;
             DisabledCam.enabled = false;
-            Lanes.GetComponent<Lanes>().enabled = true;
+            if (Lanes)
+            {
+                Lanes.GetComponent<Lanes>().enabled = true;
+            }
+            if (DisabledCam)
+            {
+                foreach (GameObject Disable in DisableGameObjects)
+                {
+                    Disable.SetActive(false);
+                }
+            }
+
+            if (ExtraDirector)
+            {
+                ExtraDirector.GetComponent<PlayableDirector>().Play();
+                this.enabled = false;
+            }
             
+
+
         }
     }
 
