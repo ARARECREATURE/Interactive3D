@@ -801,7 +801,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657653705}
-  m_LocalRotation: {x: 0.02788477, y: -0.5582921, z: 0.018779906, w: 0.82896304}
+  m_LocalRotation: {x: -0.016265368, y: 0.59228, z: 0.01196015, w: 0.8054793}
   m_LocalPosition: {x: -260.83212, y: 13.696838, z: -69.68399}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1055,7 +1055,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 747457630}
   m_LocalRotation: {x: -0.0027478433, y: -0.99825454, z: 0.028705178, w: -0.051539905}
-  m_LocalPosition: {x: -37.866016, y: 20.55, z: 54.77999}
+  m_LocalPosition: {x: -37.680798, y: 20.55, z: 54.77999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1458,7 +1458,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916047048}
   m_LocalRotation: {x: -0.171375, y: 0.46107173, z: 0.08880112, w: 0.8661166}
-  m_LocalPosition: {x: -54.054478, y: 17.633, z: 31.269999}
+  m_LocalPosition: {x: -6.23, y: 2.973, z: 20.699999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3330,13 +3330,7 @@ Animator:
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'mixamorig:LeftFoot'\n\tTransform 'mixamorig:LeftHandThumb2'\n\tTransform
-    'mixamorig:LeftHandIndex1'\n\tTransform 'mixamorig:LeftHandPinky2'\n\tTransform
-    'mixamorig:RightHandRing2'\n\tTransform 'mixamorig:Spine1'\n\tTransform 'mixamorig:LeftToeBase'\n\tTransform
-    'mixamorig:LeftHandThumb3'\n\tTransform 'mixamorig:RightArm'\n\tTransform 'mixamorig:LeftLeg'\n\tand
-    more ..."
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -3485,6 +3479,7 @@ GameObject:
   - component: {fileID: 1294314431}
   - component: {fileID: 1294314433}
   - component: {fileID: 1294314432}
+  - component: {fileID: 1294314434}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -3541,6 +3536,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1294314434
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294314430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: b241f91b9ccf8ff489abf204b30d3112, type: 2}
+  m_PivotOffset: {x: 0, y: 40, z: 40}
+  m_AmplitudeGain: 1
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 541.2626, y: 995.69727, z: 619.8587}
 --- !u!1 &1451028227
 GameObject:
   m_ObjectHideFlags: 0
